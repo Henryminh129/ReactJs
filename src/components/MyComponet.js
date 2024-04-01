@@ -9,7 +9,12 @@ class MyComponent extends React.Component {
     }
 
     handleClick = (event) => {
+        console.log(this.state.name);
         console.log(event.target)
+
+        this.setState({
+            name: 'Minh Phucs'
+        })
     }
 
     handleOnMouseOver = (event) => {
