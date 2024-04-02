@@ -1,9 +1,5 @@
 import React from "react";
 
-
-
-
-
 class UserInfor extends React.Component {
     state = {
         name: 'HenryMinh',
