@@ -8,7 +8,6 @@ class MyComponent extends React.Component {
             <div>
                 <UserInfor />
             </div>
-
         );
     }
 }
