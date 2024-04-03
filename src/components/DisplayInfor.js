@@ -16,7 +16,7 @@ class DisplayInfor extends React.Component {
         return (
             <div>
                 <div >
-                    <span className="box" onClick={() => { this.handleShowHide() }}>{this.state.isShowListUser === true ? "HIDE LIST USERS" : "SHOWLISTUSERS"}</span>
+                    <span className="box" onClick={() => { this.handleShowHide() }}>{this.state.isShowListUser === true ? "HIDE LIST USERS" : "SHOW LIST USERS"}</span>
                 </div>
                 {listUsers.map((user) => {
                     return (
@@ -30,7 +30,6 @@ class DisplayInfor extends React.Component {
 
                         </div>
                     )
-
                 })}
             </div>
         );
