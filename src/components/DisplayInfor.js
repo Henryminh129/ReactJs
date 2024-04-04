@@ -21,12 +21,20 @@ class DisplayInfor extends React.Component {
                 <div >
                     <button className="box" onClick={() => { this.handleShowHide() }}>{this.state.isShowListUser === true ? "HIDE LIST USERS" : "SHOW LIST USERS"}</button>
                 </div>
-                {listUsers.map((user) => {
+                {listUsers.map((user, index) => {
+                    console.log(index)
                     return (
+
                         <div>
                             {this.state.isShowListUser && <div className={user.age > 18 ? "green" : "red"} key={user.id}>
-                                <div>my name is {user.name}</div>
-                                <div>my age is {user.age}</div>
+                                <div>
+                                    <div>my name is {user.name}</div>
+                                    <div>my age is {user.age}</div>
+                                </div>
+                                <div>
+                                    <button onClick={() => { this.props.handleDeleteUser(user.id) }}>DELETE</button>
+                                </div>
+
                                 <hr></hr>
                             </div>}
 
