@@ -3,7 +3,6 @@ import AddUserInfor from './AddUserInfor';
 import DisplayInfor from './DisplayInfor';
 
 class MyComponent extends React.Component {
-
     state = {
         listUsers: [
 

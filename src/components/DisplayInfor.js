@@ -4,9 +4,13 @@ import logo from './../logo.svg'
 
 class DisplayInfor extends React.Component {
 
-    state = {
-        isShowListUser: true
+    constructor(props) {
+        super(props)
+        this.state = {
+            isShowListUser: true
+        }
     }
+
     handleShowHide = () => {
         this.setState({
             isShowListUser: !this.state.isShowListUser
@@ -22,7 +26,6 @@ class DisplayInfor extends React.Component {
                     <button className="box" onClick={() => { this.handleShowHide() }}>{this.state.isShowListUser === true ? "HIDE LIST USERS" : "SHOW LIST USERS"}</button>
                 </div>
                 {listUsers.map((user, index) => {
-                    console.log(index)
                     return (
 
                         <div>
