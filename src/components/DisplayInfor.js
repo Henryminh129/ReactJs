@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './DisplayInfor.scss'
 import logo from './../logo.svg'
 
@@ -7,7 +7,7 @@ import logo from './../logo.svg'
 //     constructor(props) {
 //         super(props)
 //         this.state = {
-//             isShowListUser: true
+//             isShowHideListUser: true
 //         }
 //     }
 
@@ -23,7 +23,7 @@ import logo from './../logo.svg'
 
 //     handleShowHide = () => {
 //         this.setState({
-//             isShowListUser: !this.state.isShowListUser
+//             isShowHideListUser: !this.state.isShowHideListUser
 //         })
 //     }
 
@@ -33,13 +33,13 @@ import logo from './../logo.svg'
 //             <div className="display-infor-container">
 //                 <img src={logo}></img>
 //                 <div >
-//                     <button className="box" onClick={() => { this.handleShowHide() }}>{this.state.isShowListUser === true ? "HIDE LIST USERS" : "SHOW LIST USERS"}</button>
+//                     <button className="box" onClick={() => { this.handleShowHide() }}>{this.state.isShowHideListUser === true ? "HIDE LIST USERS" : "SHOW LIST USERS"}</button>
 //                 </div>
 //                 {listUsers.map((user, index) => {
 //                     return (
 
 //                         <div>
-//                             {this.state.isShowListUser && <div className={user.age > 18 ? "green" : "red"} key={user.id}>
+//                             {this.state.isShowHideListUser && <div className={user.age > 18 ? "green" : "red"} key={user.id}>
 //                                 <div>
 //                                     <div>my name is {user.name}</div>
 //                                     <div>my age is {user.age}</div>
@@ -61,13 +61,25 @@ import logo from './../logo.svg'
 // }
 
 const DisplayInfor = (props) => {
+
     const { listUsers } = props
+
+    const [isShowHideListUser, setShowHideListUser] = useState(true)
+
+    const handleShowHide = () => {
+        setShowHideListUser(!isShowHideListUser)
+    }
+
     return (
         <div className="display-infor-container">
+            <img src={logo}></img>
+            <div>
+                <button className="box" onClick={() => { handleShowHide() }}>{isShowHideListUser === true ? "HIDE LIST USERS" : "SHOW LIST USERS"}</button>
+            </div>
             {listUsers.map((user, index) => {
                 return (
                     <div>
-                        {true &&
+                        {isShowHideListUser &&
                             <>
                                 <div className={user.age > 18 ? "green" : "red"} key={user.id}>
                                     <div>
