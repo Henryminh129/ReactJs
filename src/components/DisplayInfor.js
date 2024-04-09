@@ -11,6 +11,16 @@ class DisplayInfor extends React.Component {
         }
     }
 
+    componentDidMount() {
+        setTimeout(() => {
+            document.title = 'Henry Minh'
+        }, 3000)
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log(this.props, prevProps)
+    }
+
     handleShowHide = () => {
         this.setState({
             isShowListUser: !this.state.isShowListUser

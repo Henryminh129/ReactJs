@@ -10,10 +10,15 @@ class MyComponent extends React.Component {
     }
 
     handleAddNewUser = (userObj) => {
-
+        for (let user of this.state.listUsers) {
+            if (userObj.id <= user.id) {
+                userObj.id = user.id + 1
+            }
+        }
         this.setState({
             listUsers: [userObj, ...this.state.listUsers]
         })
+
     }
 
     handleDeleteUser = (userId) => {

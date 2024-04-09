@@ -11,6 +11,8 @@ class AddUserInfor extends React.Component {
     }
 
 
+
+
     handleOnChangeInput_Name = (event) => {
         this.setState({
             name: event.target.value,
@@ -25,7 +27,7 @@ class AddUserInfor extends React.Component {
     handleOnSubmit = (event) => {
         event.preventDefault()
         this.props.handleAddNewUser({
-            id: Math.floor((Math.random() * 100) + 1) + '-random',
+            id: Math.floor((Math.random()) + 1),
             name: this.state.name,
             age: this.state.age
         })
