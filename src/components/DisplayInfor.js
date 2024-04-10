@@ -92,9 +92,10 @@ const DisplayInfor = (props) => {
 
                                     <hr></hr>
                                 </div>
-                                {console.log(user)}
                             </>}
+                        {console.log(user)}
                     </div>
+
                 )
             })}
         </div>
