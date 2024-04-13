@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
 
-
-
 const AddUserInfor = (props) => {
 
     const [name, setName] = useState('')
