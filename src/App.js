@@ -1,13 +1,12 @@
 import logo from './logo.svg';
 import './App.scss';
-
+import Header from './components/Header/Header';
 
 const App = () => {
 
   return (
     <div className="app-container">
-      hello world
-      <button className='btn btn-primary'>Test</button>
+      <Header></Header>
     </div>
   );
 }
