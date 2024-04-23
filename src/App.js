@@ -1,22 +1,23 @@
 import logo from './logo.svg';
 import './App.scss';
 import Header from './components/Header/Header';
-import { Link } from "react-router-dom"
+import { Outlet, NavLink } from "react-router-dom"
 
 const App = () => {
 
   return (
     <div className="app-container">
-      <Header />
-      <div>
-        test Link
-        <div>
-          <button>
-            <Link to="/users">go to user page</Link>
-          </button>
-          <button>
-            <Link to="/admins">go to admin page</Link>
-          </button>
+
+      <div className='header-container'>
+        <Header></Header>
+      </div>
+      <div className='main-container'>
+
+        <div className='sidenav-container'>
+
+        </div>
+        <div className='app-content'>
+          <Outlet></Outlet>
         </div>
       </div>
     </div>
