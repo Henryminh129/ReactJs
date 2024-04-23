@@ -12,8 +12,14 @@ body {
   .header-container {
     .navbar-nav {
       .nav-link {
+        &.nav-link:hover {
+          color: rgb(0, 26, 255);
+        }
+
         &.active {
-          color: red
+          color: red;
+          font-weight: bold;
+
         }
       }
     }
