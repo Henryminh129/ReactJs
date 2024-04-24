@@ -6,7 +6,7 @@ import { Link, NavLink } from "react-router-dom"
 
 const Header = () => {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar bg="light" expand="lg" >
             <Container>
                 <NavLink to='/' className='navbar-brand'>Henry Minh</NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -17,6 +17,8 @@ const Header = () => {
                         <NavLink to="/admins" className='nav-link'>Admin</NavLink>
                     </Nav>
                     <Nav>
+                        <button className='btn-login'>Log in</button>
+                        <button className='btn-signup'>Sign up</button>
                         <NavDropdown title="Settings" id="basic-nav-dropdown">
                             <NavDropdown.Item >Log in</NavDropdown.Item>
                             <NavDropdown.Item >
