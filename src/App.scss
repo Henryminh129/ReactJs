@@ -49,6 +49,11 @@ body {
       margin: 5px;
       padding: 0px 18px;
       background-color: rgb(0, 0, 0, 0) !important;
+
+      &:hover {
+        transform: scale(1.02);
+        transition: all 0.3s ease;
+      }
     }
 
     button.btn-signup {
@@ -61,6 +66,8 @@ body {
 
       &:hover {
         background-color: black;
+        transform: scale(1.05);
+        transition: all 0.3s ease;
       }
     }
   }
@@ -94,6 +101,8 @@ body {
 
           &:hover {
             background-color: black;
+            transform: scale(1.05);
+            transition: all 0.3s ease;
           }
         }
 

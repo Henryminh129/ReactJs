@@ -8,7 +8,6 @@ const MyComponent = (props) => {
     const [listUsers, setListUsers] = useState([])
 
     const handleAddNewUser = (userObj) => {
-
         for (let user of listUsers) {
             if (userObj.id <= user.id) {
                 userObj.id = user.id + 1
@@ -20,7 +19,7 @@ const MyComponent = (props) => {
     const handleDeleteUser = (userId) => {
         let listUsersClone = listUsers
         listUsersClone = listUsersClone.filter(item => item.id !== userId)
-        setListUsers(listUsersClone);
+        setListUsers(listUsersClone); 6
     }
 
     return (
