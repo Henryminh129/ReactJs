@@ -8,10 +8,11 @@ import {
     SidebarFooter,
     SidebarContent,
 } from 'react-pro-sidebar';
-
-import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } from 'react-icons/fa';
+import './SideBar.scss'
+import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart, FaUser } from 'react-icons/fa';
 import sidebarBg from '../assets/bg2.jpg';
-
+import { MdDashboard } from 'react-icons/md'
+import { DiReact } from 'react-icons/di'
 
 const SideBar = (props) => {
     const { image, collapsed, toggled, handleToggleSidebar } = props;
@@ -37,6 +38,7 @@ const SideBar = (props) => {
                             whiteSpace: 'nowrap',
                         }}
                     >
+                        <DiReact size={'3em'} color='aqua' />
                         Henry Minh
                     </div>
                 </SidebarHeader>
@@ -44,21 +46,22 @@ const SideBar = (props) => {
                 <SidebarContent>
                     <Menu iconShape="circle">
                         <MenuItem
-                            icon={<FaTachometerAlt />}
+                            icon={<MdDashboard />}
                             suffix={<span className="badge red">New</span>}
                         >
-                            dashboard
+                            Dashboard
                         </MenuItem>
-                        <MenuItem icon={<FaGem />}> components </MenuItem>
+                        {/* <MenuItem icon={<FaGem />}> components </MenuItem> */}
                     </Menu>
                     <Menu iconShape="circle">
                         <SubMenu
-                            suffix={<span className="badge yellow">3</span>}
-                            icon={<FaRegLaughWink />}
+                            // suffix={<span className="badge yellow">3</span>}
+                            icon={<FaGem />}
+                            title="Features"
                         >
-                            <MenuItem> 1</MenuItem>
-                            <MenuItem> 2</MenuItem>
-                            <MenuItem> 3</MenuItem>
+                            <MenuItem icon={<FaList />}> User Management</MenuItem>
+                            <MenuItem icon={<FaHeart />}> Bài Quiz Management</MenuItem>
+                            <MenuItem icon={<FaGithub />}> Questions Management</MenuItem>
                         </SubMenu>
 
                     </Menu>
@@ -77,9 +80,9 @@ const SideBar = (props) => {
                             className="sidebar-btn"
                             rel="noopener noreferrer"
                         >
-                            <FaGithub />
+                            <FaUser />
                             <span style={{ whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
-                                viewSource
+                                Henry Minh
                             </span>
                         </a>
                     </div>

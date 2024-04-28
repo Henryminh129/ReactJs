@@ -1,8 +1,16 @@
 .admin-container {
     display: flex;
+
     .admin-sidebar {
         .pro-sidebar {
             height: 100vh !important;
-            }
+        }
+    }
+
+    .admin-content {
+        .FaBars {
+            height: 30px;
+            width: 30px;
+        }
     }
 }
