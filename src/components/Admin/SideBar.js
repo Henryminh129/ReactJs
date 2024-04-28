@@ -13,6 +13,7 @@ import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart, FaUs
 import sidebarBg from '../assets/bg2.jpg';
 import { MdDashboard } from 'react-icons/md'
 import { DiReact } from 'react-icons/di'
+import { Link } from 'react-router-dom'
 
 const SideBar = (props) => {
     const { image, collapsed, toggled, handleToggleSidebar } = props;
@@ -50,6 +51,7 @@ const SideBar = (props) => {
                             suffix={<span className="badge red">New</span>}
                         >
                             Dashboard
+                            <Link to='/admins' />
                         </MenuItem>
                         {/* <MenuItem icon={<FaGem />}> components </MenuItem> */}
                     </Menu>
@@ -59,7 +61,10 @@ const SideBar = (props) => {
                             icon={<FaGem />}
                             title="Features"
                         >
-                            <MenuItem icon={<FaList />}> User Management</MenuItem>
+                            <MenuItem icon={<FaList />}>
+                                User Management
+                                <Link to='/admins/manage-users' />
+                            </MenuItem>
                             <MenuItem icon={<FaHeart />}> Bài Quiz Management</MenuItem>
                             <MenuItem icon={<FaGithub />}> Questions Management</MenuItem>
                         </SubMenu>

@@ -8,9 +8,22 @@
     }
 
     .admin-content {
-        .FaBars {
-            height: 30px;
-            width: 30px;
+        width: 100%;
+
+        .admin-header {
+            height: 40px;
+            border: 1px solid green;
+
+            .FaBars {
+                height: 30px;
+                width: 30px;
+
+            }
+
+        }
+
+        .admin-main {
+            border: 1px solid red;
         }
     }
 }
