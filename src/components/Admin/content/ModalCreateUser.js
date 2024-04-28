@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import { FcPlus } from 'react-icons/fc'
 
 const ModalCreateNewUser = () => {
     const [show, setShow] = useState(false)
@@ -15,7 +16,7 @@ const ModalCreateNewUser = () => {
                 Create new user
             </Button>
 
-            <Modal show={show} onHide={handleClose} size='xl' backdrop="static">
+            <Modal show={show} onHide={handleClose} size='xl' backdrop="static" className='modal-add-user'>
                 <Modal.Header closeButton>
                     <Modal.Title>Add new user</Modal.Title>
                 </Modal.Header>
@@ -41,8 +42,14 @@ const ModalCreateNewUser = () => {
                             </select>
                         </div>
                         <div className='col-md-12'>
-                            <label className="form-label">Image</label>
-                            <input type='file'></input>
+                            <label className="form-label label-upload" htmlFor='lableUpload'><FcPlus /> Upload File Image </label>
+                            <input type='file' hidden id="lableUpload" />
+                        </div>
+
+                        <div className='col-md-12 img-preview'>
+                            <span>Preview Image</span>
+                            <img></img>
+
                         </div>
                     </form>
                 </Modal.Body>
