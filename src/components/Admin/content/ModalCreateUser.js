@@ -1,7 +1,10 @@
+
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { FcPlus } from 'react-icons/fc'
+import axios from 'axios'
+const FormData = require('form-data')
 
 const ModalCreateNewUser = (props) => {
     const { show, setShow } = props
@@ -13,7 +16,18 @@ const ModalCreateNewUser = (props) => {
     const [role, setRole] = useState("...")
     const [previewImage, setPreviewImage] = useState("")
 
-    const handleClose = () => setShow(false)
+    const handleClose = () => {
+        setShow(false);
+
+        setEmail('')
+        setPassword('')
+        setUsername('')
+        setRole("...")
+        setImage('')
+        setPreviewImage('')
+
+
+    }
     const handleUploadImage = (event) => {
         if (event.target && event.target.files && event.target.files[0]) {
             setPreviewImage(URL.createObjectURL(event.target.files[0]))
@@ -24,17 +38,28 @@ const ModalCreateNewUser = (props) => {
 
     }
 
-    const handSubmitCreateUser = () => {
-        let data = {
-            email: email,
-            password: password,
-            username: username,
-            role: role,
-            userImage: image
-        }
+    const handSubmitCreateUser = async () => {
+        // let data = {
+        //     email: email,
+        //     password: password,
+        //     username: username,
+        //     role: role,
+        //     userImage: image
+        // }
+
+        const data = new FormData();
+        data.append('email', email)
+        data.append('password', password)
+        data.append('username', username)
+        data.append('role', role)
+        data.append('userImage', image)
+
+        let res = await axios.post('http://localhost:8081/api/v1/participant', data);
+
+
         alert("Successful")
         handleClose()
-        console.log(data)
+        console.log(res)
     }
 
     return (
