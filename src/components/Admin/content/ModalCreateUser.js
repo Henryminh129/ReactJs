@@ -68,18 +68,19 @@ const ModalCreateNewUser = (props) => {
         }
         else {
 
-            let res = await postCreateNewUser(email, password, username, role, image)
+            let data = await postCreateNewUser(email, password, username, role, image)
 
-            if (res.data && res.data.EC === 0) {
+
+            if (data && data.EC === 0) {
                 toast.success('create successfully')
                 handleClose()
             }
 
-            console.log(res.data)
+            console.log(data)
 
 
-            if (res.data && res.data.EC !== 0) {
-                toast.error('fail')
+            if (data && data.EC !== 0) {
+                toast.error('user have already exsited')
             }
         }
     }
