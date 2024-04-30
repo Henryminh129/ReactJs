@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { FcPlus } from 'react-icons/fc'
 import axios from 'axios'
+import { toast } from 'react-toastify'
+
 const FormData = require('form-data')
 
 const ModalCreateNewUser = (props) => {
@@ -38,6 +40,15 @@ const ModalCreateNewUser = (props) => {
 
     }
 
+    const validateEmail = (email) => {
+        return String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+    }
+
+
     const handSubmitCreateUser = async () => {
         // let data = {
         //     email: email,
@@ -47,20 +58,43 @@ const ModalCreateNewUser = (props) => {
         //     userImage: image
         // }
 
-        const data = new FormData();
-        data.append('email', email)
-        data.append('password', password)
-        data.append('username', username)
-        data.append('role', role)
-        data.append('userImage', image)
+        const isValidEmail = validateEmail(email);
 
-        let res = await axios.post('http://localhost:8081/api/v1/participant', data);
+        if (!isValidEmail) {
+            toast.error('Invalid email')
+            return;
+        }
+        if (!password) {
+            toast.error('Invalid password')
+            return;
+        }
+        else {
+            const data = new FormData();
+            data.append('email', email)
+            data.append('password', password)
+            data.append('username', username)
+            data.append('role', role)
+            data.append('userImage', image)
+
+            let res = await axios.post('http://localhost:8081/api/v1/participant', data);
+
+            if (res.data && res.data.EC === 0) {
+                toast.success('create successfully')
+                handleClose()
+            }
+
+            console.log(res.data)
 
 
-        alert("Successful")
-        handleClose()
-        console.log(res)
+            if (res.data && res.data.EC !== 0) {
+                toast.error('fail')
+            }
+        }
     }
+
+
+
+
 
     return (
         <>
