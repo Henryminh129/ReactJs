@@ -16,7 +16,6 @@ const ManageUsers = (props) => {
 
     const fetchListUsers = async () => {
         let res = await getAllUsers()
-        console.log(res)
         if (res.EC === 0) {
             setListUsers(res.DT)
         }

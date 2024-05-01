@@ -66,23 +66,19 @@ const ModalCreateNewUser = (props) => {
             toast.error('YOU ARE NO NAME???')
             return;
         }
-        else {
-
-            let data = await postCreateNewUser(email, password, username, role, image)
 
 
-            if (data && data.EC === 0) {
-                toast.success('create successfully')
-                handleClose()
-                await props.fetchListUser();
-            }
+        let data = await postCreateNewUser(email, password, username, role, image)
+        if (data && data.EC === 0) {
+            toast.success('create successfully')
+            handleClose()
+            await props.fetchListUser();
 
-            console.log(data)
+        }
 
 
-            if (data && data.EC !== 0) {
-                toast.error('user have already exsited')
-            }
+        if (data && data.EC !== 0) {
+            toast.error('user have already exsited')
         }
     }
 

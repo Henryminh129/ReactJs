@@ -21,8 +21,8 @@ const TableUser = (props) => {
                     {listUsers && listUsers.length > 0 &&
                         listUsers.map((item, index) => {
                             return (
-                                <tr key={`table-user-${index}`}>
-                                    <th scope="row">{item.id}</th>
+                                <tr key={`table-users-${index}`}>
+                                    <td >{item.id}</td>
                                     <td>{item.username}</td>
                                     <td>{item.email}</td>
                                     <td>{item.role}</td>
