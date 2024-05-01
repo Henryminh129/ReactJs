@@ -7,12 +7,9 @@ import _ from 'lodash'
 import { toast } from 'react-toastify'
 import { putUpdateUser } from '../../../services/apiService'
 
-const FormData = require('form-data')
 
 const ModalUpdateUser = (props) => {
     const { show, setShow, dataUpdate } = props
-
-
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -38,13 +35,7 @@ const ModalUpdateUser = (props) => {
 
     const handleClose = () => {
         setShow(false);
-
-        setEmail('')
-        setPassword('')
-        setUsername('')
-        setRole("...")
-        setImage('')
-        setPreviewImage('')
+        props.resetUpdateData()
 
 
     }
@@ -57,7 +48,6 @@ const ModalUpdateUser = (props) => {
         }
 
     }
-
 
     const handSubmitCreateUser = async () => {
 
