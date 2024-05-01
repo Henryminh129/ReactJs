@@ -24,11 +24,14 @@ const ModalUpdateUser = (props) => {
     useEffect(() => {
         if (!_.isEmpty(dataUpdate)) {
 
-            setEmail(dataUpdate.email)
-            setUsername(dataUpdate.username)
-            setRole(dataUpdate.role)
-            setImage('')
-            setPreviewImage('')
+            setEmail(dataUpdate.email);
+            setPassword(dataUpdate.password)
+            setUsername(dataUpdate.username);
+            setRole(dataUpdate.role);
+            setImage('');
+            if (dataUpdate.image) {
+                setPreviewImage(`data:image/jpeg;base64,${dataUpdate.image}`)
+            }
 
         }
     }, [dataUpdate])
@@ -106,12 +109,12 @@ const ModalUpdateUser = (props) => {
                     <form className="row g-3">
                         <div className="col-md-6">
                             <label className="form-label">Email</label>
-                            <input type="email" className="form-control" value={email}
+                            <input type="email" className="form-control" value={email} disabled
                                 onChange={(event) => { setEmail(event.target.value) }} />
                         </div>
                         <div className="col-md-6">
                             <label className="form-label">Password</label>
-                            <input type="password" className="form-control" value={password}
+                            <input type="password" className="form-control" value={password} disabled
                                 onChange={(event) => { setPassword(event.target.value) }} />
                         </div>
                         <div className="col-md-6">
