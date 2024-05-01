@@ -10,6 +10,7 @@ const ManageUsers = (props) => {
 
     const [listUsers, setListUsers] = useState([])
 
+
     useEffect(() => {
         fetchListUsers()
     }, []);
@@ -20,6 +21,7 @@ const ManageUsers = (props) => {
             setListUsers(res.DT)
         }
     }
+
 
     return (
         <div className="manage-user-container">
