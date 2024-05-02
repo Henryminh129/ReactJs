@@ -4,8 +4,6 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { FcPlus } from 'react-icons/fc'
 import _ from 'lodash'
-import { toast } from 'react-toastify'
-import { putUpdateUser } from '../../../services/apiService'
 
 
 const ModalViewUser = (props) => {
