@@ -10,6 +10,7 @@ import User from './components/User/User';
 import Admin from './components/Admin/Admin';
 import HomePage from './components/Home/HomePage';
 import ManageUsers from './components/Admin/content/ManageUsers';
+import Login from './components/Auth/Login';
 import Dashboard from './components/Admin/content/DashBoard';
 
 
@@ -26,6 +27,9 @@ root.render(
           <Route path='/admins' element={<Admin />} >
             <Route index element={<Dashboard />} />
             <Route path='manage-users' element={<ManageUsers />} />
+          </Route>
+          <Route>
+            <Route path='/login' element={<Login />} />
           </Route>
         </Routes>
       </BrowserRouter>
