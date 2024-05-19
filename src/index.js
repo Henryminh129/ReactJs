@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import User from './components/User/User';
-import Admin from './components/Admin/Admin';
-import HomePage from './components/Home/HomePage';
-import ManageUsers from './components/Admin/content/ManageUsers';
-import Login from './components/Auth/Login';
-import Dashboard from './components/Admin/content/DashBoard';
+import Layout from './layout';
+import { ToastContainer, toast } from 'react-toastify'
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,19 +16,18 @@ root.render(
   <Provider store={store}>
     <React.StrictMode>
       <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<App />}>
-            <Route index element={<HomePage />} />
-            <Route path='/users' element={<User />} />
-          </Route>
-          <Route path='/admins' element={<Admin />} >
-            <Route index element={<Dashboard />} />
-            <Route path='manage-users' element={<ManageUsers />} />
-          </Route>
-          <Route>
-            <Route path='/login' element={<Login />} />
-          </Route>
-        </Routes>
+        <Layout>
+          <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover />
+        </Layout>
       </BrowserRouter>
     </React.StrictMode>
   </Provider>
@@ -41,3 +37,6 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
+
