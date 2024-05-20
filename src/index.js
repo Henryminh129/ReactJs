@@ -6,7 +6,7 @@ import store from './redux/store';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Layout from './layout';
-import { ToastContainer, toast } from 'react-toastify'
+
 
 
 
@@ -17,16 +17,7 @@ root.render(
     <React.StrictMode>
       <BrowserRouter>
         <Layout>
-          <ToastContainer
-            position="top-center"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover />
+
         </Layout>
       </BrowserRouter>
     </React.StrictMode>
