@@ -12,7 +12,22 @@
 
         .admin-header {
             height: 40px;
-            border: 1px solid green;
+            z-index: 10;
+            background-color: rgb(143, 127, 127) !important;
+
+            .nav-link {
+                color: rgb(51, 51, 51);
+
+                &.nav-link:hover {
+                    color: rgb(0, 26, 255);
+                }
+
+                &.active {
+                    color: red;
+                    font-weight: bold;
+
+                }
+            }
 
             .FaBars {
                 height: 30px;

@@ -6,10 +6,19 @@ import { toast } from 'react-toastify'
 
 
 const Login = (props) => {
+
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate()
 
+    const validateEmail = (email) => {
+        return String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+    }
 
     const handleLogin = async () => {
 
@@ -26,11 +35,24 @@ const Login = (props) => {
             toast.error(data.EM)
         }
     }
+
+    const handleShowHidePassword = () => {
+        let x = document.getElementById("myInput");
+        if (x.type === "password") {
+            x.type = 'text';
+        } else {
+            x.type = "password";
+        }
+    }
+
+    const handleSignUp = () => {
+        navigate('/signup')
+    }
     return (
         <div className='login-container'>
             <div className='header'>
                 <span> Don't have an account yet?</span>
-                <button>Sign up</button>
+                <button onClick={() => handleSignUp()}>Sign up</button>
             </div>
             <div className='title col-4 mx-auto'>
 
@@ -50,7 +72,8 @@ const Login = (props) => {
                 </div>
                 <div className='form-group'>
                     <label>Password</label>
-                    <input type={'password'} className='form-control' value={password} onChange={(event) => setPassword(event.target.value)}></input>
+                    <input type={'password'} className='form-control' value={password} onChange={(event) => setPassword(event.target.value)} id='myInput'></input>
+                    <input type='checkbox' onClick={() => handleShowHidePassword()}></input>Show Password
                 </div>
                 <span>Forgot password?</span>
                 <div>
