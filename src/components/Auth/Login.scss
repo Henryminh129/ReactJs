@@ -55,5 +55,21 @@
             cursor: pointer;
             color: blue
         }
+
+        .showhide-check {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+
+        }
+
+        .showhide-password {
+            cursor: pointer;
+            position: absolute;
+            // right: 1px;
+            // bottom: 1px;
+        }
+
     }
 }
