@@ -30,6 +30,7 @@ const ManageUsers = (props) => {
 
     const fetchListUsers = async () => {
         let res = await getAllUsers()
+
         if (res.EC === 0) {
             setListUsers(res.DT)
         }
@@ -45,6 +46,7 @@ const ManageUsers = (props) => {
 
     const handleClickBtnUpdate = (user) => {
         setShowModalUpdateUser(true)
+        console.log(user)
         setDataUpdate(user)
     }
 
@@ -83,7 +85,8 @@ const ManageUsers = (props) => {
                         fetchListUsersWithPaginate={fetchListUsersWithPaginate}
                         pageCount={pageCount}
                         currentPage={currentPage}
-                        setCurrentPage={setCurrentPage} />
+                        setCurrentPage={setCurrentPage}
+                    />
                 </div>
                 <ModalCreateNewUser
                     show={showModalCreateUser}
