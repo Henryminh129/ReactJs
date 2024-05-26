@@ -20,9 +20,9 @@ const ModalUpdateUser = (props) => {
 
     useEffect(() => {
         if (!_.isEmpty(dataUpdate)) {
-
+            console.log(dataUpdate)
             setEmail(dataUpdate.email);
-            setPassword(dataUpdate.password)
+            setPassword(dataUpdate.password);
             setUsername(dataUpdate.username);
             setRole(dataUpdate.role);
             setImage('');
@@ -49,7 +49,7 @@ const ModalUpdateUser = (props) => {
 
     }
 
-    const handSubmitCreateUser = async () => {
+    const handSubmitUpdatUser = async () => {
 
         if (!username) {
             toast.error('YOU ARE NO NAME???')
@@ -115,7 +115,7 @@ const ModalUpdateUser = (props) => {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handSubmitCreateUser}>
+                    <Button variant="primary" onClick={handSubmitUpdatUser}>
                         Save
                     </Button>
                 </Modal.Footer>
