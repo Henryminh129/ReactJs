@@ -1,4 +1,23 @@
 .login-container {
+
+
+    .loaderIcon {
+        font-size: 14px;
+        margin-bottom: 3px;
+        color: aqua;
+        animation: spin 1s infinite linear;
+    }
+
+    @keyframes spin {
+        from {
+            transform: scale(1) rotate(0deg);
+        }
+
+        to {
+            transform: scale(1) rotate(360deg);
+        }
+    }
+
     .header {
         height: 45px;
         text-align: right;
@@ -16,6 +35,8 @@
             border-radius: 5px;
             background: #f9f9f9;
             border: 1px solid;
+
+
 
             &:hover {
                 background-color: white;
@@ -49,27 +70,21 @@
             border-radius: 5px;
             color: wheat;
             background: black;
+
+            &:disabled {
+                background: #dddddd;
+                color: #afafaf;
+                cursor: no-drop;
+            }
         }
+
+
 
         .back {
             cursor: pointer;
             color: blue
         }
 
-        .showhide-check {
-            cursor: pointer;
-            position: absolute;
-            right: 10px;
-            bottom: 10px;
-
-        }
-
-        .showhide-password {
-            cursor: pointer;
-            position: absolute;
-            // right: 1px;
-            // bottom: 1px;
-        }
 
     }
 }
