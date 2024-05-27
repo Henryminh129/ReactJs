@@ -6,7 +6,7 @@ import store from './redux/store';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Layout from './layout';
-
+import 'nprogress/nprogress.css'
 
 
 
@@ -17,7 +17,6 @@ root.render(
     <React.StrictMode>
       <BrowserRouter>
         <Layout>
-
         </Layout>
       </BrowserRouter>
     </React.StrictMode>
