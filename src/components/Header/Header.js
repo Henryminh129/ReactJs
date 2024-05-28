@@ -9,8 +9,8 @@ const Header = () => {
 
     const isAuthenticated = useSelector(state => state.user.isAuthenticated);
     const account = useSelector(state => state.user.account);
+    const navigate = useNavigate()
 
-    const navigate = useNavigate();
 
     const handleLogin = () => {
         navigate('/login')
@@ -19,6 +19,8 @@ const Header = () => {
     const handleSignup = () => {
         navigate('/signup')
     }
+
+
     return (
         <Navbar bg="light" expand="lg" >
             <Container>
@@ -37,7 +39,7 @@ const Header = () => {
                                 <button className='btn-signup' onClick={() => handleSignup()}>Sign up</button>
                             </>
                             : <NavDropdown title="Settings" id="basic-nav-dropdown">
-                                <NavDropdown.Item >
+                                <NavDropdown.Item>
                                     Log out
                                 </NavDropdown.Item>
                                 <NavDropdown.Item>Profile</NavDropdown.Item>
