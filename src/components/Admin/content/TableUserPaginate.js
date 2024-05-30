@@ -1,8 +1,4 @@
 import ReactPaginate from "react-paginate";
-import React, {
-    useEffect,
-    useState
-} from "react";
 
 
 const TableUserPaginate = (props) => {
