@@ -33,7 +33,6 @@ const TableUserPaginate = (props) => {
                                 <tr key={`table-users-${index}`}>
                                     <td >{item.id}</td>
                                     <td>{item.username}</td>
-                                    <td>{item.password}</td>
                                     <td>{item.email}</td>
                                     <td>{item.role}</td>
                                     <td>

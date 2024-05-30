@@ -25,7 +25,6 @@ const HomePage = () => {
                         {isAuthenticated === false ?
                             <button onClick={() => navigate('/login')}>Get's started. It's free</button> :
                             <button onClick={() => navigate('/users')}>Doing Quiz Now</button>}
-
                     </div>
                 </div>
             </div>

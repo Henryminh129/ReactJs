@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const ListQuiz = (props) => {
     const navigate = useNavigate()
-
     const [arrQuiz, setArrQuiz] = useState([])
 
     useEffect(() => {
